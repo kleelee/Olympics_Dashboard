@@ -5,7 +5,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 import pymysql
 from config import sqlpass
-from flask import Flask
+from flask import Flask, jsonify, render_template
 import json
 
 df = pd.read_csv("athlete_events.csv")
@@ -22,6 +22,11 @@ Athletes = Base.classes.athletes
 session = Session(engine)
 
 app = Flask(__name__)
+
+@app.route("/")
+def index():
+    """Return the homepage."""
+    return render_template("index.html")
 
 @app.route("/api/v1.0/gold_athletes")
 def gold_athletes():
