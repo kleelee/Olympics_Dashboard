@@ -40,6 +40,40 @@ def gold_athletes():
     jsonified_data = json.dumps(work)
     return jsonified_data
 
+@app.route("/api/v1.0/silver_athletes")
+def silver_athletes():
+    """Return the athletes data as json"""
+    items = session.query(Athletes.Name, Athletes.Sex, Athletes.Team, Athletes.Sport, func.count(Athletes.Medal == "Gold")).\
+    filter_by(Medal="Silver").\
+    group_by(Athletes.Name).\
+    order_by(func.count(Athletes.Medal == "Silver").desc()).limit(100)
+
+    work = {'data': [
+         {'Name':x.Name, 'Sex':
+            x.Sex, 'Country' :x.Team, 'Sport': x.Sport, 'Silver Medals': x[4]}
+        for x in items
+       ]}
+
+    jsonified_data = json.dumps(work)
+    return jsonified_data
+
+@app.route("/api/v1.0/bronze_athletes")
+def bronze_athletes():
+    """Return the athletes data as json"""
+    items = session.query(Athletes.Name, Athletes.Sex, Athletes.Team, Athletes.Sport, func.count(Athletes.Medal == "Gold")).\
+    filter_by(Medal="Bronze").\
+    group_by(Athletes.Name).\
+    order_by(func.count(Athletes.Medal == "Bronze").desc()).limit(100)
+
+    work = {'data': [
+         {'Name':x.Name, 'Sex':
+            x.Sex, 'Country' :x.Team, 'Sport': x.Sport, 'Bronze Medals': x[4]}
+        for x in items
+       ]}
+
+    jsonified_data = json.dumps(work)
+    return jsonified_data
+
 @app.route("/api/v1.0/gold_countries")
 def gold_countries():
     """Return the athletes data as json"""
@@ -83,6 +117,38 @@ def bronze_countries():
     work = {'data': [
          {'Country':x.Team,'Bronze Medals': x[1]}
         for x in medalg
+       ]}
+
+    jsonified_data = json.dumps(work)
+    return jsonified_data
+
+@app.route("/api/v1.0/winter_events")
+def winter_events():
+    """Return the athletes data as json"""
+    events_winter = session.query(Athletes.Year, Athletes.Season, func.count(distinct(Athletes.Sport))).\
+    filter(Athletes.Season == "Winter").\
+    group_by(Athletes.Year).\
+    order_by((Athletes.Year).desc()).all()
+
+    work = {'data': [
+         {'Year':x.Year,'Season': x[2]}
+        for x in events_winter
+       ]}
+
+    jsonified_data = json.dumps(work)
+    return jsonified_data
+
+@app.route("/api/v1.0/summer_events")
+def summer_events():
+    """Return the athletes data as json"""
+    events_summer = session.query(Athletes.Year, Athletes.Season, func.count(distinct(Athletes.Sport))).\
+    filter(Athletes.Season == "Summer").\
+    group_by(Athletes.Year).\
+    order_by((Athletes.Year).desc()).all()
+
+    work = {'data': [
+         {'Year':x.Year,'Season': x[2]}
+        for x in events_summer
        ]}
 
     jsonified_data = json.dumps(work)
