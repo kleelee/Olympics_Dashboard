@@ -154,5 +154,20 @@ def summer_events():
     jsonified_data = json.dumps(work)
     return jsonified_data
 
+@app.route("/api/v1.0/city_year")
+def city_year():
+    """Return the athletes data as json"""
+    city_year = session.query(Athletes.Year, Athletes.Season, Athletes.City).\
+    group_by(Athletes.Year).\
+    order_by((Athletes.Year).desc()).all()
+
+    work = {'data': [
+         {'Year':x.Year,'Season': x.Season, 'City': x.City}
+        for x in city_year
+       ]}
+
+    jsonified_data = json.dumps(work)
+    return jsonified_data
+
 if __name__ == "__main__":
     app.run(debug=True)
