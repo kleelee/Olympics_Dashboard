@@ -25,8 +25,8 @@ var chartGroup = svg.append("g")
  .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from csv
-d3.csv("/data/MedalCountByCountry.csv", function(error, athleteData) {
- if (error) return console.warn(error);
+d3.csv("MedalCountByCountry.csv", function(error, athleteData) {
+ if (error) return (error);
 
  function selectMedals(data) {
    return data.Medal = "Gold"
@@ -129,8 +129,8 @@ var chartGroup1 = svg1.append("g")
  .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from csv
-d3.csv("/data/events.csv", function(error, athleteData) {
- if (error) return console.warn(error);
+d3.csv("events.csv", function(error, athleteData) {
+ if (error) return (error);
 
  function selectSeason(data) {
    return data.Season == "Summer";
@@ -235,14 +235,18 @@ var chartGroup2 = svg2.append("g")
   .attr("transform", `translate(${chartMargin2.left}, ${chartMargin2.top})`);
 
 
-function createGraph(sample){
+//function createGraph(sample){
+
 // Load data from hours-of-tv-watched.csv
-url = "";
-if (sample == "Gold") {url = ""}
+// url = "";
+// if (sample == "Gold") {url = "goldathletes.csv"}
+// else if (sample == "Silver") {url = "silverathletes.csv"}
+// else {url ="bronzeathletes.csv"}
+// console.log(url)
 
-
-d3.csv("hours-of-tv-watched.csv", function(error, athleteData) {
-  if (error) return console.warn(error);
+d3.csv(createGraph(), function(error, athleteData) {
+  if (error) return (error);
+  console.log(athleteData)
 
   function selectMedals(data) {
     return data.Medal_Count >= 8
@@ -316,10 +320,18 @@ d3.csv("hours-of-tv-watched.csv", function(error, athleteData) {
     .attr("class", "axisText")
     .text("Olympic Gold Medalists");
 
-})};
+});
+
+
+function createGraph(sample){
+url = "";
+if (sample == "Gold") {url = "goldathletes.csv"}
+else if (sample == "Silver") {url = "silverathletes.csv"}
+else {url ="bronzeathletes.csv"}
+console.log(url)
+return url}
 
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
-  buildCharts(newSample);
-  buildMetadata(newSample);
+  createGraph(newSample);
 }
