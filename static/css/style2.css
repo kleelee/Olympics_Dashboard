@@ -1,0 +1,207 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 500px;
+  width: 100%;
+}
+
+#hero {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  background: url(/static/img/olympic_runner.png) top center;
+  background-size: cover;}
+
+@media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+
+#hero .hero-container {
+    background: rgba(0, 0, 0, 0.4);
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+#hero h1 {
+    margin: 30px 0 10px 0;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+@media (max-width: 768px) {
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+
+#hero h2 {
+    color: #fff;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    #hero h2 {
+      font-size: 24px;
+      line-height: 26px;
+      margin-bottom: 30px;
+    }
+    #hero h2 .rotating {
+      display: block;
+    }
+  }
+  
+  #hero .rotating > .animated {
+    display: inline-block;
+  }
+  
+  #hero .actions a {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 2px;
+    transition: 0.5s;
+    margin: 10px;
+  }
+  
+  #hero .btn-get-started {
+    background: #03C4EB;
+    border: 2px solid #03C4EB;
+    color: #fff;
+  }
+  
+  #hero .btn-get-started:hover {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  
+  #hero .btn-services {
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  
+  #hero .btn-services:hover {
+    background: #03C4EB;
+    border: 2px solid #03C4EB;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .section-description {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .section-title-divider {
+    width: 50px;
+    height: 3px;
+    background: #03C4EB;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  #about {
+    background: #fff;
+    padding: 50px 0;
+  }
+  
+  #about .about-img {
+    overflow: hidden;
+  }
+  
+  #about .about-img img {
+    max-width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    #about .about-img {
+      height: auto;
+    }
+    #about .about-img img {
+      margin-left: 0;
+      padding-bottom: 30px;
+    }
+  }
+  
+  #about .about-content {
+    background: #fff;
+  }
+  
+  #about .about-title {
+    color: #333;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  
+  #about .about-text {
+    line-height: 26px;
+    margin-bottom: 15px;
+  }
+  
+  #about .about-text:last-child {
+    margin-bottom: 0;
+  }
+
+.active {
+   font-weight: bold;
+   fill: #000;
+   fill: #DD7373;
+   transition: fill 0.3s ease-out;
+   text-anchor: middle;
+ }
+
+ .inactive {
+   font-weight: lighter;
+   fill: #DD7373;
+   transition: fill 0.3s ease-out;
+   text-anchor: middle;
+ }
+
+ .inactive:hover {
+   fill: #DD7373;
+   cursor: pointer;
+ }
+
+ .active1 {
+  font-weight: bold;
+  fill: #000;
+  fill: #7265c5;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive1 {
+  font-weight: lighter;
+  fill: #7265c5;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive1:hover {
+  fill: #7265c5;
+  cursor: pointer;
+}

@@ -1,0 +1,53 @@
+Games,Year,Season,City,lat,lon,all_games,num
+1992 Winter,1992,Winter,Albertville,34.267849,-86.208801,1992 Winter,1
+1928 Summer,1928,Summer,Amsterdam,52.370216,4.895168,1928 Summer,1
+1920 Summer,1920,Summer,Antwerpen,51.219448,4.402464,1920 Summer,1
+1896 Summer,1896,Summer,Athina,37.98381,23.727539,"1896 Summer, 1906 Summer, 2004 Summer ",3
+1906 Summer,1906,Summer,Athina,37.98381,23.727539,"1896 Summer, 1906 Summer, 2004 Summer ",3
+2004 Summer,2004,Summer,Athina,37.98381,23.727539,"1896 Summer, 1906 Summer, 2004 Summer ",3
+1996 Summer,1996,Summer,Atlanta,33.748997,-84.387985,1996 Summer,1
+1992 Summer,1992,Summer,Barcelona,41.385063,2.173404,1992 Summer,1
+2008 Summer,2008,Summer,Beijing,39.904202,116.407394,2008 Summer,1
+1936 Summer,1936,Summer,Berlin,52.520008,13.404954,1936 Summer,1
+1988 Winter,1988,Winter,Calgary,51.048615,-114.070847,1988 Winter,1
+1924 Winter,1924,Winter,Chamonix,45.925461,6.86981,1924 Winter,1
+1956 Winter,1956,Winter,Cortina d'Ampezzo,46.53738,12.13892,1956 Winter,1
+1936 Winter,1936,Winter,Garmisch-Partenkirchen,47.492371,11.08611,1936 Winter,1
+1968 Winter,1968,Winter,Grenoble,45.18853,5.724524,1968 Winter,1
+1952 Summer,1952,Summer,Helsinki,60.169857,24.938379,1952 Summer,1
+1964 Winter,1964,Winter,Innsbruck,47.262691,11.3947,"1964 Winter, 1976 Winter ",2
+1976 Winter,1976,Winter,Innsbruck,47.262691,11.3947,"1964 Winter, 1976 Winter ",2
+1932 Winter,1932,Winter,Lake Placid,44.279287,-73.978793,"1932 Winter, 1980 Winter",2
+1980 Winter,1980,Winter,Lake Placid,44.279287,-73.978793,"1932 Winter, 1980 Winter",2
+1994 Winter,1994,Winter,Lillehammer,61.115273,10.466231,1994 Winter,1
+1908 Summer,1908,Summer,London,51.507351,-0.127758,"1908 Summer, 1948 Summer, 2012 Summer",3
+1948 Summer,1948,Summer,London,51.507351,-0.127758,"1908 Summer, 1948 Summer, 2012 Summer",3
+2012 Summer,2012,Summer,London,51.507351,-0.127758,"1908 Summer, 1948 Summer, 2012 Summer",3
+1932 Summer,1932,Summer,Los Angeles,34.052235,-118.243683,"1932 Summer, 1984 Summer",2
+1984 Summer,1984,Summer,Los Angeles,34.052235,-118.243683,"1932 Summer, 1984 Summer",2
+1956 Summer,1956,Summer,Melbourne,-37.813629,144.963058,1956 Summer,1
+1968 Summer,1968,Summer,Mexico City,19.432608,-99.133209,1968 Summer,1
+1976 Summer,1976,Summer,Montreal,45.50169,-73.567253,1976 Summer,1
+1980 Summer,1980,Summer,Moskva,55.755871,37.61768,1980 Summer,1
+1972 Summer,1972,Summer,Munich,48.135124,11.581981,1972 Summer,1
+1998 Winter,1998,Winter,Nagano,36.648582,138.194778,1998 Winter,1
+1952 Winter,1952,Winter,Oslo,59.913868,10.752245,1952 Winter,1
+1900 Summer,1900,Summer,Paris,48.856613,2.352222,"1900 Summer, 1924 Summer",2
+1924 Summer,1924,Summer,Paris,48.856613,2.352222,"1900 Summer, 1924 Summer",2
+2016 Summer,2016,Summer,Rio de Janeiro,-22.906847,-43.172897,2016 Summer,1
+1960 Summer,1960,Summer,Roma,41.902782,12.496365,1960 Summer,1
+2002 Winter,2002,Winter,Salt Lake City,40.76078,-111.891045,2002 Winter,1
+1928 Winter,1928,Winter,Sankt Moritz,46.497059,9.83844,"1928 Winter, 1948 Winter",2
+1948 Winter,1948,Winter,Sankt Moritz,46.497059,9.83844,"1928 Winter, 1948 Winter",2
+1972 Winter,1972,Winter,Sapporo,43.062096,141.35437,1972 Winter,1
+1984 Winter,1984,Winter,Sarajevo,43.856258,18.413076,1984 Winter,1
+1988 Summer,1988,Summer,Seoul,37.566536,126.977966,1988 Summer,1
+2014 Winter,2014,Winter,Sochi,43.584469,39.72028,2014 Winter,1
+1960 Winter,1960,Winter,Squaw Valley,36.725788,-119.235817,1960 Winter,1
+1904 Summer,1904,Summer,St. Louis,38.627003,-90.199402,1904 Summer,1
+1912 Summer,1912,Summer,Stockholm,59.329323,18.068581,"1912 Summer, 1956 Summer",2
+1956 Summer,1956,Summer,Stockholm,59.329323,18.068581,"1912 Summer, 1956 Summer",2
+2000 Summer,2000,Summer,Sydney,-33.86882,151.20929,2000 Summer,1
+1964 Summer,1964,Summer,Tokyo,35.689487,139.691711,1964 Summer,1
+2006 Winter,2006,Winter,Torino,45.068371,7.68307,2006 Winter,1
+2010 Winter,2010,Winter,Vancouver,49.28273,-123.120735,2010 Winter,1

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Olympics Data</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}">
+
+  <!-- scroll reveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+
+<body>
+  <div id="preloader"></div>
+   <!--==========================
+  Opening Section
+  ============================-->
+  <section id="hero">
+      <div class="hero-container">
+        <div class="wow fadeIn">
+          <div class="hero-logo">
+          </div>
+  
+          <h1 class="headline">120 Years of the Olympic Games</h1>
+          <h2 class= "tagline">The Athletes, <span class="punchline">the Medals,</span><span class="punchline2">the Victory!</span></h2>
+          <div class="actions">
+            <a href="#about" class="btn-get-started">Learn More</a>
+          </div>
+        </div>
+      </div>
+  </section>
+
+ <script>
+  ScrollReveal().reveal('.headline', { delay: 500 } );
+  ScrollReveal().reveal('.tagline', { delay: 2500 });
+  ScrollReveal().reveal('.punchline', { delay: 3500 });
+  ScrollReveal().reveal('.punchline2', { delay: 4500 });
+</script>
+
+
+
+  <section id="about">
+      <div class="container wow fadeInUp">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">About the Olympic Games</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">From 776 BC to 393 AD, the Ancient Olympic Games were held in Greece. In 1896, the first modern Olympic Games were held in Athens.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container about-container wow fadeInUp">
+        <div class="row">
+  
+          <div class="col-lg-6 about-img">
+            <img src="static/img/nigerian_runners.png" alt="">
+          </div>
+  
+          <div class="col-md-6 about-content">
+            <br>
+            <br>
+            <br>
+            <h2 class="about-title">The Modern Olympic Games</h2>
+            <p class="about-text">
+              The Ancient Olympics began in the Summer of 776 BC, and were held in Greece every four years until 393 AD. After this, it took 1503 years before the Olympics returned to modern day.
+            </p>
+            <p class="about-text">
+              The Olympics creates an international playing field, with 206 National Olympic Committees(NOCs) competing in the Games. The first International Olympic Committee meeting was held in June 1984.  The committee rightfully chose Greece as the site of the inaugural modern Olympics.
+            <p class="about-text">
+              From 1924-1992, the Winter and the Summer Olympics took place in the same year. Now, they are on separate cycles and alternate every two years. Then next Olympic Games will be held in the Summer of 2020 in Tokyo, Japan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Map of Olympic Game Locations -->
+    <section id="about"> 
+        <div class="container wow fadeInUp">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="section-title">Olympic Game Locations</h3>
+              <div class="section-title-divider"></div>
+              <p class="section-description">Click on the circles in the map below to explore more about the locations, seasons and years of each of the Olympic Games since 1896.</p>
+            </div>
+          </div>
+        </div>
+        <div class="container about-container wow fadeInUp">
+          <div class="row">
+    
+            <div class="col-lg-12 about-img">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Gold Medal Bar Chart -->
+    <section id="about"> 
+        <div class="container wow fadeInUp">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="section-title">Countries with Most Gold Medals</h3>
+              <div class="section-title-divider"></div>
+              <p class="section-description">Learn more about which countries have won the most gold medals since the start of the Modern Olympic Games.</p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <script src="{{ url_for('static', filename='js/app_bar.js') }}"></script>
+              <div id="bar"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+<!-- Bar Chart of Athletes with Most Gold Medals -->
+    <section id="about"> 
+        <div class="container wow fadeInUp">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="section-title">Athletes with Most Gold Medals</h3>
+              <div class="section-title-divider"></div>
+              <p class="section-description">Learn more about the athletes with the most gold medals.</p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="bar2"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+
+  <!-- Point Graph of Summer Olympics -->
+  <section id="about"> 
+      <div class="container wow fadeInUp">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Summer Olympics Through the Years</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Since the first modern Summer Olympics in 1896,the Games have been steadily increasing in popularity, size, and participation. Click on the graph below to explore how the number of athletes and number of sports represented in the Summer Olympics has changed over the years.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="line"></div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- Point Graph of Winter Olympics -->
+  <section id="about"> 
+      <div class="container wow fadeInUp">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Winter Olympics Through the Years</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">The first modern Winter Olympics was held in France in 1924. Click on the graph below to explore how the number of athletes and number of sports represented in the Winter Olympics has changed over the years.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="line1"></div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- Footer-->
+  <div id="footer">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script src="{{ url_for('static', filename='js/app_bar.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app_transition.js') }}"></script> -->
+  
+  
+
+</body>
+
+</html>
