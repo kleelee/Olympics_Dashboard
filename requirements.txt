@@ -1,7 +1,6 @@
 Flask
 gunicorn
 ipython
-json
 jupyter
 matplotlib
 numpy
