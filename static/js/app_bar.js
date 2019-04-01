@@ -27,14 +27,14 @@
   .attr("transform", `translate(${chartMargin1.left}, ${chartMargin1.top})`);
 
   // Load data from csv
-  d3.json("/api/v1.0/gold_countries", function(error, athleteData) {
+  d3.json("/static/data/goldCountries.json", function(error, athleteData) {
   if (error) return (error);
 
   // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
   var xBandScale = d3.scaleBand()
     .domain(athleteData.map(d => d.Country))
     .range([0, chartWidth1])
-    .padding(0.2);
+    .paddingInner(0.2);
 
   // Create a linear scale for the vertical axis.
   var yLinearScale = d3.scaleLinear()
@@ -94,13 +94,15 @@
   .attr("transform", `translate(${chartMargin1.left}, ${chartMargin1.top})`);
 
 // Perform a GET request to the query URL
-d3.json('/api/v1.0/locations', function(error, data) {
+d3.json("/static/data/OlympicLocations.json", function(error, data) {
   if (error) return (error);
  
    // Once we get a response, send the data.features object to the createFeatures function)
-   createFeatures(data.features);
+   
+   createFeatures(data);
+  
  });
- 
+
  function createFeatures(countryData) {
  
    // Define a function we want to run once for each feature in the features array
@@ -110,7 +112,6 @@ d3.json('/api/v1.0/locations', function(error, data) {
    } 
  
    function markerColor(season) {
-     console.log(season);
      var color = "";
      if (season == "Summer") {color = "#DD7373";}
      else {color = "lightskyblue";};
@@ -120,6 +121,7 @@ d3.json('/api/v1.0/locations', function(error, data) {
    
    // Create a GeoJSON layer containing the features array on the earthquakeData object
    // Run the onEachFeature function once for each piece of data in the array
+  //  "OlympicLocations.geojson"
    var countries = L.geoJSON(countryData, {
      onEachFeature: onEachFeature,
      pointToLayer: function (feature, layer) {
@@ -133,7 +135,7 @@ d3.json('/api/v1.0/locations', function(error, data) {
          });
      }
    });
-   console.log(countries);
+
  
    // Sending our earthquakes layer to the createMap function
    createMap(countries);
@@ -260,9 +262,9 @@ function renderCircles(circlesGroup, newYScale, chosenYaxis) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.json('/api/v1.0/growth', function(err, SportAthData) {
+d3.json('/static/data/growth.json', function(err, SportAthData) {
   if (err) throw err;
-
+ 
 
   var parseTime = d3.timeParse("%Y");
 
@@ -430,22 +432,22 @@ var svg2 = d3.select("#bar2")
 var chartGroup2 = svg2.append("g")
   .attr("transform", `translate(${chartMargin2.left}, ${chartMargin2.top})`);
 
-d3.json("/api/v1.0/gold_athletes", function(error, athleteData) {
+d3.json("/static/data/goldAthletes.json", function(error, athleteData) {
   if (error) return (error);
-  console.log(athleteData)
-
+  
+console.log(athleteData);
 
   //Cast the hours value to a number for each piece of tvData
   athleteData.forEach(function(d) {
     d.Gold_Medals = +d.Gold_Medals;
-    console.log(d.Gold_Medals)
   });
 
   // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
   var xBandScale = d3.scaleBand()
     .domain(athleteData.map(d => d.Name))
     .range([0, chartWidth2])
-    .padding(0.2);
+    .paddingInner(0.2);
+   
 
   // Create a linear scale for the vertical axis.
   var yLinearScale = d3.scaleLinear()
@@ -459,8 +461,8 @@ d3.json("/api/v1.0/gold_athletes", function(error, athleteData) {
 
   // Append two SVG group elements to the chartGroup area,
   // and create the bottom and left axes inside of them
-  chartGroup2.append("g")
-    .call(leftAxis);
+  // chartGroup2.append("g"); 
+    // .call(leftAxis); Removed during Heroku
 
   chartGroup2.append("g")
     .attr("transform", `translate(0, ${chartHeight2})`)
@@ -597,7 +599,7 @@ function renderCircles(circlesGroup, newYScale, chosenYaxis) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.json('/api/v1.0/growthwinter', function(err, SportAthData) {
+d3.json('/static/data/GrowthWinter.json', function(err, SportAthData) {
   if (err) throw err;
 
 

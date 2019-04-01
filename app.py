@@ -8,17 +8,14 @@ from config import sqlpass
 from flask import Flask, jsonify, render_template
 import json
 
-df = pd.read_csv("athlete_events.csv")
-df1 = pd.read_csv("olympicslocations.csv")
-
 rds_connection_string = f"root:{sqlpass}@127.0.0.1/olympics_db?charset=utf8"
 engine = create_engine(f'mysql://{rds_connection_string}', encoding='utf-8')
 
-#if_exists could be 'replace' to save time, these two lines are commented out
-#they add the data to the MySQL table
+# if_exists could be 'replace' to save time, these two lines are commented out
+# they add the data to the MySQL table
 
-#df.to_sql(name='athletes', con=engine, if_exists='append', index=False)
-#df1.to_sql(name='locations', con=engine, if_exists='append', index=False)
+# df.to_sql(name='athletes', con=engine, if_exists='append', index=False)
+# df1.to_sql(name='locations', con=engine, if_exists='append', index=False)
 
 Base = automap_base()
 Base.prepare(engine, reflect=True)
@@ -52,6 +49,8 @@ def gold_athletes():
         work.append(y)
 
     jsonified_data = json.dumps(work)
+    with open('goldAthletes.json', 'w') as outfile:  
+        json.dump(work, outfile)
     return jsonified_data
 
 @app.route("/api/v1.0/gold_countries")
@@ -68,6 +67,8 @@ def gold_countries():
         work.append(y)
 
     jsonified_data = json.dumps(work)
+    with open('goldCountries.json', 'w') as outfile:  
+        json.dump(work, outfile)
     return jsonified_data
 
 
@@ -85,6 +86,8 @@ def growth():
         work.append(y)
 
     jsonified_data = json.dumps(work)
+    with open('growth.json', 'w') as outfile:  
+        json.dump(work, outfile)
     return jsonified_data
 
 
@@ -103,6 +106,8 @@ def growthwinter():
         work.append(y)
 
     jsonified_data = json.dumps(work)
+    with open('GrowthWinter.json', 'w') as outfile:  
+        json.dump(work, outfile)
     return jsonified_data
 
 @app.route("/api/v1.0/locations")
@@ -133,6 +138,8 @@ def locations():
     geo = {"type": "FeatureCollection", "features": work}
 
     jsonified_data = json.dumps(geo)
+    with open('OlympicLocations.json', 'w') as outfile:  
+        json.dump(work, outfile)
     return jsonified_data
 
 if __name__ == "__main__":
