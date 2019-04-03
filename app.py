@@ -4,7 +4,7 @@ import numpy as np
 # from sqlalchemy.ext.automap import automap_base
 # from sqlalchemy.orm import Session
 # import pymysql
-from config import sqlpass
+# from config import sqlpass
 from flask import Flask, jsonify, render_template
 import json
 
