@@ -25,10 +25,17 @@
 
   <!-- scroll reveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
+  <script type = "text/JavaScript">
+    <!--
+       function AutoRefresh( t ) {
+          setTimeout("location.reload(true);", t);
+       }
+    //-->
+ </script>
 
 </head>
 
-<body>
+<body onload = "JavaScript:AutoRefresh(5000);">
   <div id="preloader"></div>
    <!--==========================
   Opening Section
@@ -201,13 +208,9 @@
   <!-- Footer-->
   <div id="footer">
   </div>
+  <script src="{{ url_for('static', filename='js/app_bar.js') }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
-  <script src="{{ url_for('static', filename='js/app_bar.js') }}"></script>
-  <!-- <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app_transition.js') }}"></script> -->
-  
-  
 
 </body>
 

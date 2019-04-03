@@ -12,11 +12,11 @@
   left: 70
   };
 
-  // Define dimensions of the chart area
+  // Define dimensions of the chart
   var chartWidth1 = svgWidth1 - chartMargin1.left - chartMargin1.right;
   var chartHeight1 = svgHeight1 - chartMargin1.top - chartMargin1.bottom;
 
-  // Select bar, append SVG area to it, and set the dimensions
+  // Select bar, append SVG to it, and set the dimensions
   var svg1 = d3.select("#bar")
   .append("svg")
   .attr("height", svgHeight1)
@@ -461,8 +461,8 @@ console.log(athleteData);
 
   // Append two SVG group elements to the chartGroup area,
   // and create the bottom and left axes inside of them
-  // chartGroup2.append("g"); 
-    // .call(leftAxis); Removed during Heroku
+    chartGroup2.append("g")
+    .call(leftAxis);
 
   chartGroup2.append("g")
     .attr("transform", `translate(0, ${chartHeight2})`)
